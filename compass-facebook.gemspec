@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{compass-facebook}
-  s.version = "0.1.1"
+  s.version = "0.1.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Bobby Santiago"]
@@ -13,6 +13,8 @@ Gem::Specification.new do |s|
     "README.mkdn"
   ]
   s.files = [
+    "Manifest",
+    "VERSION.yml",
     "lib/compass_facebook.rb",
     "lib/compass_facebook/compass_plugin.rb",
     "lib/compass_facebook/sass_extensions.rb",
