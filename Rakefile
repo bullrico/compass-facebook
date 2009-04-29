@@ -11,7 +11,7 @@ begin
     gem.authors = ["Bobby Santiago"]
     gem.add_dependency('chriseppstein-compass', '>= 0')
     gem.files.include %w(lib/jeweler/templates/.document lib/jeweler/templates/.gitignore)
-    gem.files = FileList['lib/**/*', 'sass/**/*', 'templates/**/*'].to_a
+    gem.files = FileList['lib/**/*', 'sass/**/*', 'templates/**/*', 'VERSION.yml', 'Manifest'].to_a
     gem.test_files = []
 
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
