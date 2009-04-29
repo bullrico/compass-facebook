@@ -1,0 +1,64 @@
+!sevensixty_gutter_width = 10px
+!sevensixty_container_width = 760px
+!sevensixty_columns = 20
+!sevensixty_grid-width = 28px
+
+=grid-container
+  :margin-left auto
+  :margin-right auto
+  :width = !sevensixty_container_width
+
+=grid-width(!n, !cols, !gutter_width = !sevensixty_gutter_width)
+  :width= (!sevensixty_container_width / !cols) * !n - !gutter_width
+
+=grid-unit-base(!gutter_width = !sevensixty_gutter_width)
+  :display inline
+  :float left
+  :margin
+    :left= !gutter_width / 2
+    :right= !gutter_width / 2
+
+=grid(!n, !cols, !gutter_width = !sevensixty_gutter_width)
+  +grid-unit-base(!gutter_width)
+  +grid-width(!n, !cols, !gutter_width)
+
+=alpha
+  :margin-left 0
+
+=omega
+  :margin-right 0
+
+=grids(!cols, !gutter_width = !sevensixty_gutter_width)
+  #{enumerate(".grid_",1,!cols)}
+    +grid-unit-base
+  @for !n from 1 through !cols
+    .grid_#{!n}
+      +grid-width(!n, !cols, !gutter_width)
+
+=grid-prefix(!n, !cols)
+  :padding-left= (!sevensixty_container_width / !cols) * !n
+
+=grid-prefixes(!cols)
+  @for !n from 1 through !cols - 1
+    .prefix_#{!n}
+      +grid-prefix(!n, !cols)
+
+=grid-suffix(!n, !cols)
+  :padding-right= (!sevensixty_container_width / !cols) * !n
+
+=grid-suffixes(!cols)
+  @for !n from 1 through !cols - 1
+    .suffix_#{!n}
+      +grid-suffix(!n, !cols)
+
+=grid-children
+  .alpha
+    +alpha
+  .omega
+    +omega
+
+=grid-system(!cols = !sevensixty_columns)
+  +grid-container
+  +grids(!sevensixty_columns)
+  +grid-prefixes(!sevensixty_columns)
+  +grid-suffixes(!sevensixty_columns)

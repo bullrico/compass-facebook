@@ -5,10 +5,14 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "compass-facebook"
-    gem.summary = %Q{TODO}
+    gem.summary = %Q{Compass-compatible Sass port of 960.gs, for Facebook apps.}
     gem.email = "bobby.santiago@gmail.com"
     gem.homepage = "http://github.com/bullrico/compass-facebook"
     gem.authors = ["Bobby Santiago"]
+    gem.add_dependency('chriseppstein-compass', '>= 0')
+    gem.files.include %w(lib/jeweler/templates/.document lib/jeweler/templates/.gitignore)
+    gem.files = FileList['lib/**/*', 'sass/**/*', 'templates/**/*'].to_a
+    gem.test_files = []
 
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
