@@ -1,7 +1,21 @@
-= compass-facebook
+Compass-compatible Facebook Plugin
+================================
 
-Description goes here.
+Based on Nathan Smith's 960 grid system, adjusted for Facebook's 760px-wide layouts
 
-== Copyright
+---------
 
-Copyright (c) 2009 Bobby Santiago. See LICENSE for details.
+This plugin adds a 760 Grid System framework to [Compass](http://compass-style.org/).
+
+Install
+=======
+
+    sudo gem install chriseppstein-compass
+    sudo gem install bullrico-compass-facebook
+
+Create a 760-pattern-based Compass Project
+==================================
+
+    compass -r compass-facebook -f 760 <project name>
+
+Then edit your `grid.sass` and `typography.sass` files accordingly.
