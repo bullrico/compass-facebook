@@ -11,4 +11,4 @@ templates/project/grid.sass
 templates/project/manifest.rb
 templates/project/typography.sass
 
-VERSION
+VERSION.yml
